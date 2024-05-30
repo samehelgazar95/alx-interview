@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """Pascal Triangle Implementation"""
 
 
@@ -7,12 +8,9 @@ def pascal_triangle(n):
 
     if n >= 1:
         pascal = [[1]]
-
+  
     if n >= 2:
-        pascal = [[1], [1, 1]]
-
-    if n >= 3:
-        i = 2
+        i = 1
         for i in range(i, n):
             temp = []
             m = i + 1
