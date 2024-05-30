@@ -8,9 +8,12 @@ def pascal_triangle(n):
 
     if n >= 1:
         pascal = [[1]]
-  
+
     if n >= 2:
-        i = 1
+        pascal = [[1], [1, 1]]
+
+    if n >= 3:
+        i = 2
         for i in range(i, n):
             temp = []
             m = i + 1
