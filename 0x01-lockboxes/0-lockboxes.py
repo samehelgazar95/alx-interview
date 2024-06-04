@@ -5,7 +5,7 @@
 def canUnlockAll(boxes):
     """Unlock the boxes, Problem Solving"""
     if len(boxes[0]) == 0:
-        return False
+        return True
 
     keys_set = set()
     keys_map = {i: False for i in range(len(boxes))}
