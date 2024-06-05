@@ -16,12 +16,9 @@ def canUnlockAll(boxes):
 
     while len(keys_set) > prev_len:
         prev_len = len(keys_set)
-        new_keys = []
-        for key in keys_set:
+        for key in keys_set.copy():
             keys_map[key] = True
-            new_keys.extend(boxes[key])
-
-        keys_set.update(new_keys)
+            keys_set.update(boxes[key])
 
     # Return True if any value meets the condition
     if any(i is False for i in keys_map.values()):
