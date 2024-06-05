@@ -4,7 +4,7 @@
 
 def canUnlockAll(boxes):
     """Unlock the boxes, Problem Solving"""
-    if len(boxes[0]) == 0:
+    if len(boxes[0]) == 0 or type(boxes) is not list:
         return True
 
     keys_set = set()
