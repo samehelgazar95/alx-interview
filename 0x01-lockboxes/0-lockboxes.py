@@ -21,7 +21,4 @@ def canUnlockAll(boxes):
             keys_set.update(boxes[key])
 
     # Return True if any value meets the condition
-    if any(i is False for i in keys_map.values()):
-        return False
-    else:
-        return True
+    return all(keys_map.values())
