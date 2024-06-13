@@ -32,7 +32,7 @@ through division by its largest possible factors.
 
 #     return curr_op
 
-def minOps(n):
+def minOperations(n):
     """
     minOperations
     Gets fewest # of operations needed to result in exactly n H characters
