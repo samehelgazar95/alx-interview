@@ -28,7 +28,10 @@ def minOperations(n):
     # if mod == 0:
     # min = base + (n - base) / base + 1
     """
-    if is_prime(n) or n == 1:
+    if n <= 1:
+        return 0
+
+    if is_prime(n):
         return n
 
     all_ops = []
