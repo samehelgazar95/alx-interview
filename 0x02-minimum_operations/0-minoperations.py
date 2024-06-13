@@ -3,6 +3,14 @@
 Copy all || Paste >> Those are the only allowed operations to use.
 write a method that calculates the fewest number of operations needed
 to result in exactly n H characters in the file.
+
+MY CODE DIDNOT PASS FOR 3 CASES, THE LOWER ONE PASSES FOR ALL CASES (NOT MINE)
+The underlying principle behind solving this problem is
+to find the largest divisor of the current (n) and then
+update (n) by dividing it by this largest divisor.
+This process aims to minimize the number of operations needed to
+construct exactly (n) H characters by systematically reducing (n)
+through division by its largest possible factors.
 """
 
 
@@ -24,7 +32,7 @@ to result in exactly n H characters in the file.
 
 #     return curr_op
 
-def minOperations(n):
+def minOps(n):
     """
     minOperations
     Gets fewest # of operations needed to result in exactly n H characters
