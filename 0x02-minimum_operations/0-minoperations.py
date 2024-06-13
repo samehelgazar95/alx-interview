@@ -34,9 +34,11 @@ def minOperations(n):
     if is_prime(n):
         return n
 
-    all_ops = []
+    min_op = 0
     for i in range(2, n):
         if n % i == 0:
-            all_ops.append(int(i + (n - i) / i + 1))
+            curr_op = (int(i + (n - i) / i + 1))
+            if curr_op < min_op:
+                min_op = curr_op
 
-    return min(all_ops)
+    return curr_op
