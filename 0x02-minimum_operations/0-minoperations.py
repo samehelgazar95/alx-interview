@@ -4,7 +4,8 @@ Copy all || Paste >> Those are the only allowed operations to use.
 write a method that calculates the fewest number of operations needed
 to result in exactly n H characters in the file.
 
-MY CODE DIDNOT PASS FOR 3 CASES, THE LOWER ONE PASSES FOR ALL CASES (NOT MINE)
+MY CODE DIDNOT PASS FOR 3 CASES, THE SECOND ONE PASSES FOR ALL CASES (NOT MINE)
+
 The underlying principle behind solving this problem is
 to find the largest divisor of the current (n) and then
 update (n) by dividing it by this largest divisor.
