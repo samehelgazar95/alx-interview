@@ -1,61 +1,54 @@
 #!/usr/bin/python3
-"""N Queens placement on NxN chessboard"""
-
-
+"""Solving N Queens with Backtracing"""
 import sys
 
 
-def generate_solutions(row, column):
-    solution = [[]]
-    for queen in range(row):
-        solution = place_queen(queen, column, solution)
-    return solution
+def nqueens(n, y, board):
+    """
+    Method: nqueens - place n queens
+            on an n by n board so that
+            no queens are attacking any
+            others.
+    Parameters: n is an int that sets
+                board size and # of queens
+    Return: All possible solutions to
+            placement, in list of lists form
+    """
+    for x in range(n):
+        hold = 0
+        for q in board:
+            if x == q[1]:
+                hold = 1
+                break
+            if y - x == q[0] - q[1]:
+                hold = 1
+                break
+            if x - q[1] == q[0] - y:
+                hold = 1
+                break
+        if hold == 0:
+            board.append([y, x])
+            if y != n - 1:
+                nqueens(n, y + 1, board)
+            else:
+                print(board)
+            del board[-1]
 
 
-def place_queen(queen, column, prev_solution):
-    safe_position = []
-    for array in prev_solution:
-        for x in range(column):
-            if is_safe(queen, x, array):
-                safe_position.append(array + [x])
-    return safe_position
-
-
-def is_safe(q, x, array):
-    if x in array:
-        return (False)
-    else:
-        return all(abs(array[column] - x) != q - column
-                   for column in range(q))
-
-
-def init():
+def main():
     if len(sys.argv) != 2:
         print("Usage: nqueens N")
         sys.exit(1)
-    if sys.argv[1].isdigit():
+    try:
         n = int(sys.argv[1])
-    else:
-        print("N must be a number")
+    except Exception:
+        print('N must be a number')
         sys.exit(1)
     if n < 4:
         print("N must be at least 4")
         sys.exit(1)
-    return (n)
 
-
-def n_queens():
-
-    n = init()
-    # generate all solutions
-    solutions = generate_solutions(n, n)
-    # print solutions
-    for array in solutions:
-        clean = []
-        for q, x in enumerate(array):
-            clean.append([q, x])
-        print(clean)
-
+    nqueens(n, 0, [])
 
 if __name__ == '__main__':
-    n_queens()
+    main()
